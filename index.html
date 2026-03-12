@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clario Optic | Expertise & Vision Haute Définition</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --dark: #1a1a1a;
+            --grey-deep: #2d2d2d;
+            --orange-vivid: #ff6b00;
+            --white: #ffffff;
+            --bg-light: #f4f7f6;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; color: var(--dark); line-height: 1.6; background: var(--white); }
+
+        /* --- NAVIGATION --- */
+        nav { background: var(--white); padding: 15px 6%; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
+        .logo span { color: var(--orange-vivid); }
+        .nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--orange-vivid); }
+        .btn-rdv { background: var(--orange-vivid); color: white !important; padding: 12px 25px; border-radius: 4px; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; }
+
+        /* --- HERO --- */
+        header { height: 90vh; background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1511556820780-d912e42b4980?auto=format&fit=crop&q=80&w=1400'); background-size: cover; background-position: center; display: flex; align-items: center; padding: 0 8%; color: white; margin-top: 70px; }
+        .hero-text { max-width: 650px; }
+        .hero-text h1 { font-family: 'Montserrat', sans-serif; font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero-text p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 35px; }
+        .cta-group { display: flex; gap: 20px; }
+        .btn-primary { background: var(--orange-vivid); color: white; padding: 18px 35px; text-decoration: none; border-radius: 4px; font-weight: 700; transition: 0.3s; }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255,107,0,0.3); }
+
+        /* --- PRESTATIONS (STYLE LAHLOU MODERNE) --- */
+        .section { padding: 100px 8%; }
+        .title-box { text-align: center; margin-bottom: 60px; }
+        .title-box h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; text-transform: uppercase; }
+        .title-box .line { width: 80px; height: 5px; background: var(--orange-vivid); margin: 20px auto; }
+
+        .service-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; }
+        .price-list { background: var(--bg-light); border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
+        .price-item { display: grid; grid-template-columns: 1fr auto; padding: 25px; border-bottom: 1px solid #e0e0e0; transition: 0.3s; }
+        .price-item:hover { background: white; }
+        .price-item div h4 { font-weight: 700; color: var(--grey-deep); }
+        .price-item .val { color: var(--orange-vivid); font-weight: 800; font-size: 1.1rem; }
+
+        /* --- CATALOGUE DYNAMIQUE --- */
+        .catalogue-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .frame-card { background: white; border: 1px solid #f0f0f0; border-radius: 8px; padding: 20px; text-align: center; transition: 0.4s; position: relative; }
+        .frame-card:hover { transform: scale(1.03); box-shadow: var(--shadow); }
+        .frame-card img { width: 100%; height: auto; transition: 0.3s; }
+        .frame-card h3 { margin: 15px 0 5px; font-size: 1.1rem; }
+        .frame-card .tag { background: var(--dark); color: white; padding: 4px 10px; font-size: 0.7rem; border-radius: 20px; position: absolute; top: 15px; left: 15px; }
+
+        /* --- RDV & FORMULAIRE --- */
+        .rdv-container { display: grid; grid-template-columns: 1fr 1fr; background: var(--grey-deep); border-radius: 20px; overflow: hidden; color: white; }
+        .rdv-info { padding: 60px; background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); }
+        .rdv-form { padding: 60px; background: white; color: var(--dark); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 8px; text-transform: uppercase; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; }
+        .submit-btn { width: 100%; padding: 15px; background: var(--dark); color: white; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: var(--orange-vivid); }
+
+        /* --- WHATSAPP & FOOTER --- */
+        .wa-sticky { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: var(--shadow); z-index: 1000; animation: bounce 2s infinite; text-decoration: none; }
+        footer { background: #111; color: white; padding: 80px 8% 20px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
+        .footer-content h3 { color: var(--orange-vivid); margin-bottom: 25px; }
+        .deliver-tag { display: inline-block; border: 1px solid var(--orange-vivid); padding: 5px 15px; border-radius: 5px; color: var(--orange-vivid); font-size: 0.8rem; margin-top: 15px; }
+
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .service-grid, .rdv-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CLARIO<span>OPTIC</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#catalogue">Montures</a></li>
+            <li><a href="#rdv" class="btn-rdv">Prendre RDV</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="hero-text">
+            <span style="color:var(--orange-vivid); font-weight:700; letter-spacing:3px;">MAÎTRE OPTICIEN</span>
+            <h1>L'élégance de voir le monde autrement.</h1>
+            <p>Combinez haute technologie de verres et design exclusif. Votre vision est notre signature.</p>
+            <div class="cta-group">
+                <a href="#catalogue" class="btn-primary">Découvrir la Collection</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="expertise" class="section">
+        <div class="title-box">
+            <h2>Nos Services Experts</h2>
+            <div class="line"></div>
+        </div>
+        <div class="service-grid">
+            <div class="price-list">
+                <div class="price-item">
+                    <div>
+                        <h4>Examen de vue informatisé</h4>
+                        <small>Test de réfraction haute précision</small>
+                    </div>
+                    <span class="val">Offert*</span>
+                </div>
+                <div class="price-item">
+                    <div>
+                        <h4>Adaptation lentilles de contact</h4>
+                        <small>Essais et suivi biométriques</small>
+                    </div>
+                    <span class="val">150 DH</span>
+                </div>
+                <div class="price-item">
+                    <div>
+                        <h4>Traitement Blue-Cut</h4>
+                        <small>Protection lumière bleue écrans</small>
+                    </div>
+                    <span class="val">Inclus</span>
+                </div>
+            </div>
+            <div class="info-side">
+                <h3 style="margin-bottom:20px;">Pourquoi choisir Clario ?</h3>
+                <p>Nous utilisons les dernières technologies de surfaçage de verres pour vous garantir un confort visuel immédiat. <strong>Satisfait ou adapté.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogue" class="section" style="background:var(--bg-light)">
+        <div class="title-box">
+            <h2>Collection Exclusive</h2>
+            <div class="line"></div>
+        </div>
+        <div class="catalogue-grid">
+            <div class="frame-card">
+                <span class="tag">LUXE</span>
+                <img src="clario-1.png.png" alt="Lunettes Clario 1">
+                <h3>Modèle Alpha</h3>
+                <p>Gris Anthracite</p>
+            </div>
+            <div class="frame-card">
+                <span class="tag">NEW</span>
+                <img src="clario-10.png.jpeg" alt="Lunettes Clario 10">
+                <h3>Modèle Sigma</h3>
+                <p>Orange Fusion</p>
+            </div>
+            <div class="frame-card">
+                <img src="clario-11.png.jpeg" alt="Lunettes Clario 11">
+                <h3>Modèle Delta</h3>
+                <p>Gris Mat</p>
+            </div>
+            <div class="frame-card">
+                <img src="clario-12.png.jpeg" alt="Lunettes Clario 12">
+                <h3>Modèle Omega</h3>
+                <p>Édition Limitée</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rdv" class="section">
+        <div class="rdv-container">
+            <div class="rdv-info">
+                <h2>Planifiez votre visite</h2>
+                <p style="margin:20px 0;">Évitez l'attente en prenant rendez-vous avec notre expert opticien pour un bilan personnalisé.</p>
+                <div class="deliver-tag"><i class="fas fa-truck"></i> Livraison Gratuite partout au Maroc</div>
+            </div>
+            <div class="rdv-form">
+                <form>
+                    <div class="form-group">
+                        <label>Nom Complet</label>
+                        <input type="text" placeholder="Hajar ...">
+                    </div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+                        <div class="form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" placeholder="06...">
+                        </div>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date">
